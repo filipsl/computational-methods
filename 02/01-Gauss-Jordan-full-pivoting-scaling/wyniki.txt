@@ -1,0 +1,34 @@
+Matrix  100 x 100
+Valid result?:  True
+My function:  0.5377314440011105 s
+np.linalg.solve function:  0.0004251419995853212 s
+np.linalg.lstsq function:  0.0077989800010982435 s
+
+
+Matrix  500 x 500
+Valid result?:  True
+My function:  61.70782762399904 s
+np.linalg.solve function:  0.00805555899933097 s
+np.linalg.lstsq function:  0.13385417300014524 s
+
+
+Matrix  750 x 750
+Valid result?:  True
+My function:  212.91551824199996 s
+np.linalg.solve function:  0.02232611300132703 s
+np.linalg.lstsq function:  0.338239180000528 s
+
+
+Matrix  1000 x 1000
+Valid result?:  True
+My function:  497.09974450200025 s
+np.linalg.solve function:  0.04784524199931184 s
+np.linalg.lstsq function:  0.8920148719989811 s
+
+
+Matrix  1250 x 1250
+Valid result?:  True
+My function:  969.1898148420005 s
+np.linalg.solve function:  0.0845065679968684 s
+np.linalg.lstsq function:  1.6152529940009117 s
+
