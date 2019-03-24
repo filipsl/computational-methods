@@ -1,0 +1,28 @@
+Matrix  100 x 100
+Valid result?:  True
+My function:  0.014319058995170053 s
+scipy.linalg.lu function:  0.0010268369951518252 s
+
+
+Matrix  250 x 250
+Valid result?:  True
+My function:  0.12566834400058724 s
+scipy.linalg.lu function:  0.002476649999152869 s
+
+
+Matrix  500 x 500
+Valid result?:  True
+My function:  0.5576328179959091 s
+scipy.linalg.lu function:  0.013210277000325732 s
+
+
+Matrix  750 x 750
+Valid result?:  True
+My function:  1.5713933419974637 s
+scipy.linalg.lu function:  0.02998950899927877 s
+
+
+Matrix  1000 x 1000
+Valid result?:  True
+My function:  3.4623533120029606 s
+scipy.linalg.lu function:  0.057681537997268606 s
