@@ -1,4 +1,10 @@
+# Created by Filip Slazyk
+# MOwNiT 2
+# 2018/2019
+
+import scipy.linalg
 import numpy as np
+import timeit
 
 
 def lu_decomposition(b):
@@ -41,9 +47,9 @@ def lu_decomposition_with_pivoting(b):
         pivot = 0
 
         for j in range(i, n):
-            if pivot < abs(U[j][i]/s[permutation_vector[j]]):
+            if pivot < abs(U[j][i] / s[permutation_vector[j]]):
                 max_row = j
-                pivot = abs(U[j][i]/s[permutation_vector[j]])
+                pivot = abs(U[j][i] / s[permutation_vector[j]])
 
         for j in range(i + 1, n):
             if abs(U[j][i]) == pivot:
@@ -64,7 +70,7 @@ def lu_decomposition_with_pivoting(b):
         U[(i + 1):n, i:n] = U[(i + 1):n, i:n] - U[i, i:n] * l_temp[:, np.newaxis]
 
     for i in range(0, n):
-        for j in range(i+1, n):
+        for j in range(i + 1, n):
             U[j][i] = 0
             L[i][j] = 0
 
@@ -72,26 +78,20 @@ def lu_decomposition_with_pivoting(b):
     return P, L, U
 
 
-a = np.random.rand(4, 4)
-# a = np.array([[1., 2., 3.], [9., 8., 9.], [2., 3., 5.]])
+for i in [100, 250, 500, 750, 1000]:
+    print('Matrix ', i, 'x', i)
 
-print(a)
+    a = np.random.randn(i, i)
 
-# L, U = scipy.linalg.lu(a, permute_l=True)
+    start = timeit.default_timer()
+    P, L, U = lu_decomposition_with_pivoting(a)
+    stop = timeit.default_timer()
+    print("Valid result?: ", np.allclose(P @ a, L @ U, atol=1e-10))
+    print('My function: ', stop - start, "s")
 
-# print("L:", L)
-# print("U:", U)
-# print("L @ U:", L @ U)
+    start = timeit.default_timer()
+    P, L, U = scipy.linalg.lu(a)
+    stop = timeit.default_timer()
+    print('scipy.linalg.lu function: ', stop - start, "s")
 
-
-P, L, U = lu_decomposition_with_pivoting(a)
-
-# print("L:\n", L)
-# print("U\n:", U)
-# print("P:\n", P)
-# print("L @ U:\n", L @ U)
-# print("a: \n", a)
-# print("P @ L @ U:\n", P @ L @ U)
-# print("P @ L:\n", P @ L)
-print("P @ A:\n", P @ a)
-print("L @ U:\n", L @ U)
+    print("\n")

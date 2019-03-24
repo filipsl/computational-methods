@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="28a4e6bd-3bb9-43ca-86c0-120591355fa8" name="Default Changelist" comment="" />
+    <list default="true" id="28a4e6bd-3bb9-43ca-86c0-120591355fa8" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../02-LU-decomposition/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../02-LU-decomposition/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../02-LU-decomposition/LU_decomposition.py" beforeDir="false" afterPath="$PROJECT_DIR$/../02-LU-decomposition/LU_decomposition.py" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,7 +18,7 @@
     <session id="989502939">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="2" />
+          <entry key="project.closed" value="3" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.10" value="1" />
@@ -49,8 +52,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/01_gauss_jordan.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+            <state relative-caret-position="-990">
+              <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
               <folding>
                 <element signature="e#50#68#0" expanded="true" />
                 <marker date="1553385661861" expanded="true" signature="123:295" ph="..." />
@@ -76,6 +79,9 @@
       <replace>permutation_vector</replace>
     </replaceStrings>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
@@ -95,6 +101,7 @@
     <option name="width" value="649" />
     <option name="height" value="736" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -227,8 +234,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/01_gauss_jordan.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+        <state relative-caret-position="-990">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
           <folding>
             <element signature="e#50#68#0" expanded="true" />
             <marker date="1553385661861" expanded="true" signature="123:295" ph="..." />
