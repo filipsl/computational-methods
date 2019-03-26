@@ -18,8 +18,6 @@ writeFile.close()
 
 # 3-regular graph n=50 r = 1
 G = nx.random_regular_graph(3, 50)
-# nx.draw_spring(G, with_labels=True)
-# plt.show()
 edges = G.edges()
 with open('./graphs_csv/3_regular_graph.csv', 'w') as writeFile:
     writer = csv.writer(writeFile)
@@ -33,7 +31,7 @@ edges = G.edges()
 with open('./graphs_csv/graph_with_bridge.csv', 'w') as writeFile:
     writer = csv.writer(writeFile)
     for edge in edges:
-        writer.writerow(edge + (1,))
+        writer.writerow(edge + (np.random.rand() * 10,))
     G = nx.erdos_renyi_graph(20, 0.2)
     edges = G.edges()
     for edge in edges:
@@ -60,16 +58,55 @@ with open('./graphs_csv/2D_grid_var_r.csv', 'w') as writeFile:
                         + (np.random.rand() * 10,))
 writeFile.close()
 
-# G = nx.random_partition_graph([10, 10], 0.4, 0.1)
-#
-# edges = G.edges()
-#
-# with open('./graphs_csv/graph2.csv', 'w') as writeFile:
-#     writer = csv.writer(writeFile)
-#     for edge in edges:
-#         writer.writerow(edge)
-#
-# writeFile.close()
-#
-# nx.draw_spring(G, with_labels=True)
-# plt.show()
+# ###################### BIG TESTS #######################
+
+# Random graph n=2000 r in (0,10)
+G = nx.erdos_renyi_graph(2000, 0.2)
+edges = G.edges()
+with open('./graphs_csv/BIG_2000_random_graph.csv', 'w') as writeFile:
+    writer = csv.writer(writeFile)
+    for edge in edges:
+        writer.writerow(edge + (np.random.rand() * 10,))
+writeFile.close()
+
+# Random graph n=4000 r in (0,10)
+G = nx.erdos_renyi_graph(4000, 0.2)
+edges = G.edges()
+with open('./graphs_csv/BIG_4000_random_graph.csv', 'w') as writeFile:
+    writer = csv.writer(writeFile)
+    for edge in edges:
+        writer.writerow(edge + (np.random.rand() * 10,))
+writeFile.close()
+
+# 3-regular graph n=4000 r = 1
+G = nx.random_regular_graph(3, 4000)
+edges = G.edges()
+with open('./graphs_csv/BIG_4000_3_regular_graph.csv', 'w') as writeFile:
+    writer = csv.writer(writeFile)
+    for edge in edges:
+        writer.writerow(edge + (np.random.rand() * 10,))
+writeFile.close()
+
+# Graph with bridge n=4000 r in (0,10)
+G = nx.erdos_renyi_graph(2000, 0.2)
+edges = G.edges()
+with open('./graphs_csv/BIG_4000_graph_with_bridge.csv', 'w') as writeFile:
+    writer = csv.writer(writeFile)
+    for edge in edges:
+        writer.writerow(edge + (np.random.rand() * 10,))
+    G = nx.erdos_renyi_graph(2000, 0.2)
+    edges = G.edges()
+    for edge in edges:
+        writer.writerow((edge[0] + 2000,) + (edge[1] + 2000,) + (np.random.rand() * 10,))
+    writer.writerow((1000, 3000, np.random.rand() * 10))  # add bridge
+writeFile.close()
+
+# 2D GRID r in (0,10)
+G = nx.grid_graph(dim=[60, 60])
+edges = G.edges()
+with open('./graphs_csv/BIG_3600_2D_grid_var_r.csv', 'w') as writeFile:
+    writer = csv.writer(writeFile)
+    for edge in edges:
+        writer.writerow(tuple(map(lambda x: x[0] * 60 + x[1], edge))
+                        + (np.random.rand() * 10,))
+writeFile.close()

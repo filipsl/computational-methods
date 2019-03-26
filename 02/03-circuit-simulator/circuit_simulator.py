@@ -75,7 +75,6 @@ def round_labels(labels):
         v = LessPrecise(round(v, 2))
         labels[label] = v
 
-# TO DO : add first and second Kirchhoff's law verification
 
 def verify_first_kirchhoff_law(G, i_array):
     eps = 1e-10
@@ -104,8 +103,6 @@ def verify_second_kirchhoff_law(G, i_array):
         if abs(sem_sum - voltage_sum) > eps:
             return False
     return True
-
-
 
 
 ##################################################################################
