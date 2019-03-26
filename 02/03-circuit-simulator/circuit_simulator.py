@@ -358,12 +358,13 @@ nodes_color_map = []
 nodes_size_map = []
 
 for node in G_di.nodes():
-    if node == node_a or node == node_b:
+    if node == sem_a or node == sem_b:
         nodes_color_map.append('red')
         nodes_size_map.append(40)
     else:
         nodes_color_map.append('black')
         nodes_size_map.append(10)
+
 
 options = {
     'node_color': nodes_color_map,
@@ -420,7 +421,7 @@ nodes_color_map = []
 nodes_size_map = []
 
 for node in G_di.nodes():
-    if node == node_a or node == node_b:
+    if node == sem_a or node == sem_b:
         nodes_color_map.append('red')
         nodes_size_map.append(40)
     else:
