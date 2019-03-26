@@ -12,8 +12,12 @@ def import_data_from_csv(file):
     G = nx.Graph()
     with open(file, 'r') as csv_file:
         reader = csv.reader(csv_file)
+        j = 0
         for i, row in enumerate(reader):
-            G.add_edge(int(row[0]), int(row[1]), r=int(row[2]), sem=0, id=i + 1, i=0)
+            if j < 50:
+                if not G.has_edge(int(row[0]), int(row[1])):
+                    G.add_edge(int(row[0]), int(row[1]), r=abs(float(row[2])), sem=0, id=j + 1, i=0)
+                    j += 1
     return G
 
 
@@ -26,16 +30,13 @@ def add_sem(G, node_a, node_b, sem):  # node_a -> (+)sem(-) ->node_b (positive s
 
 def first_kirchhoff_law(G):
     edges_number = G.size()
-    print(edges_number)
     sem = []
     a = []  # a - matrix of equations derived from I Kirchhoff's law
     for node in G.nodes:
-        row = [0] * edges_number
+        row = np.zeros(edges_number)
         sem.append(0)
-        for edge1 in G.edges(node):
-            # print(G.get_edge_data(*edge1))
-            # print(G.get_edge_data(*edge1).get('id'))
-            row[G.get_edge_data(*edge1).get('id')] = 1 if edge1[0] > edge1[1] else -1
+        for edge in G.edges(node):
+            row[G.get_edge_data(*edge).get('id')] = 1 if edge[0] > edge[1] else -1
         a.append(row)
     return a, sem
 
@@ -77,8 +78,7 @@ def round_labels(labels):
 
 
 G = import_data_from_csv("soc-sign-bitcoinalpha.csv")
-print(G.edges())
-add_sem(G, 1, 4, 3)
+add_sem(G, 1901, 161, 3)
 i_matrix = compute_i(G)
 
 G_di = nx.DiGraph()
