@@ -108,6 +108,31 @@ def verify_second_kirchhoff_law(G, i_array):
 
 ##################################################################################
 
+# BIG GRAPHS TEST
+
+##################################################################################
+def run_big_tests():
+    big_graph_names = ('BIG_1000_random_graph.csv',
+                       'BIG_2000_random_graph.csv',
+                       'BIG_4000_3_regular_graph.csv',
+                       'BIG_2000_graph_with_bridge.csv',
+                       'BIG_3600_2D_grid_var_r.csv')
+
+    for graph_name in big_graph_names:
+        G = import_data_from_csv('./graphs_csv/' + graph_name)
+        print('\nimported: ' + graph_name)
+        if graph_name == 'BIG_1000_random_graph.csv':
+            add_sem(G, 250, 500, 30)
+        else:
+            add_sem(G, 500, 1500, 30)
+        i_array = compute_i(G)
+        print('Verifying ' + graph_name)
+        print('I Kirchhoff\'s law', verify_first_kirchhoff_law(G, i_array))
+        print('II Kirchhoff\'s law', verify_second_kirchhoff_law(G, i_array))
+
+
+##################################################################################
+
 # DATA PROCESSING AND VISUALISING
 
 ##################################################################################
@@ -118,7 +143,7 @@ graph_name = 'random_graph.csv'
 sem_a = 10
 sem_b = 27
 
-G = import_data_from_csv('./graphs_csv/'+graph_name)
+G = import_data_from_csv('./graphs_csv/' + graph_name)
 add_sem(G, sem_a, sem_b, 30)
 i_array = compute_i(G)
 
@@ -140,11 +165,9 @@ for edge in G.edges():
 edges_di = G_di.edges()
 i_array = [G_di[u][v]['i'] for u, v in edges_di]
 
-
 fig = plt.gcf()
 fig.set_size_inches(10, 10)
 pos = nx.spring_layout(G_di)
-
 
 nodes_color_map = []
 nodes_size_map = []
@@ -156,7 +179,6 @@ for node in G_di.nodes():
     else:
         nodes_color_map.append('black')
         nodes_size_map.append(10)
-
 
 options = {
     'node_color': nodes_color_map,
@@ -174,103 +196,256 @@ fig.suptitle('Random graph, SEM = 30V, R = 1 Ohm')
 plt.show()
 fig.savefig('./graphs_png/random_graph.png', dpi=300)
 
+# 3-regular graph
 
-#
-#
-#
-# G = import_data_from_csv("./graphs_csv/graph1.csv")
-# add_sem(G, 99, 45, 30)
-# i_array = compute_i(G)
-#
-# # print(verify_first_kirchhoff_law(G, i_array))
-# # print(verify_second_kirchhoff_law(G, i_array))
-#
-#
-# G_di = nx.DiGraph()
-#
-# for edge in G.edges():
-#     id = G.get_edge_data(*edge).get('id')
-#     node_a, node_b = edge[0], edge[1]
-#     i = i_array[id]
-#     if i < 0:
-#         G_di.add_edge(min(node_a, node_b), max(node_a, node_b), i=-i)
-#     else:
-#         G_di.add_edge(max(node_a, node_b), min(node_a, node_b), i=i)
-#
-# edges_di = G_di.edges()
-# i_array = [G_di[u][v]['i'] for u, v in edges_di]
-#
-# fig = plt.gcf()
-# fig.set_size_inches(10, 10)
-# fig.set_facecolor("red")
-#
-#
-# pos = {}
-#
-# for node in G_di.nodes():
-#     pos.update([(node, (node / 10, node % 10))])
-#
-# nodes_color_map = []
-# nodes_size_map = []
-#
-# for node in G_di.nodes():
-#     if node == 45 or node == 99:
-#         nodes_color_map.append('red')
-#         nodes_size_map.append(40)
-#     else:
-#         nodes_color_map.append('black')
-#         nodes_size_map.append(10)
-#
-#
-# options = {
-#     'node_color': nodes_color_map,
-#     'node_size': nodes_size_map,
-#     'width': 3,
-#     'font_size': 8
-# }
-#
-# nx.draw(G_di, pos, edges=edges_di, with_labels=False, edge_color=i_array,
-#         edge_cmap=plt.cm.Reds, **options)
-# labels = nx.get_edge_attributes(G_di, 'i')
-# round_labels(labels)
-# nx.draw_networkx_edge_labels(G_di, pos, edge_labels=labels, font_size=5)
-# fig.suptitle('2D grid, SEM = 30V, R = 1 Ohm')
-# plt.show()
-# fig.savefig('test2png.png', dpi=300)
+graph_name = '3_regular_graph.csv'
+sem_a = 10
+sem_b = 27
 
+G = import_data_from_csv('./graphs_csv/' + graph_name)
+add_sem(G, sem_a, sem_b, 30)
+i_array = compute_i(G)
 
+print('Verifying ' + graph_name)
+print('I Kirchhoff\'s law', verify_first_kirchhoff_law(G, i_array))
+print('II Kirchhoff\'s law', verify_second_kirchhoff_law(G, i_array))
 
+G_di = nx.DiGraph()
 
+for edge in G.edges():
+    id = G.get_edge_data(*edge).get('id')
+    node_a, node_b = edge[0], edge[1]
+    i = i_array[id]
+    if i < 0:
+        G_di.add_edge(min(node_a, node_b), max(node_a, node_b), i=-i)
+    else:
+        G_di.add_edge(max(node_a, node_b), min(node_a, node_b), i=i)
 
+edges_di = G_di.edges()
+i_array = [G_di[u][v]['i'] for u, v in edges_di]
 
+fig = plt.gcf()
+fig.set_size_inches(10, 10)
+pos = nx.shell_layout(G_di)
 
+nodes_color_map = []
+nodes_size_map = []
 
+for node in G_di.nodes():
+    if node == sem_a or node == sem_b:
+        nodes_color_map.append('red')
+        nodes_size_map.append(40)
+    else:
+        nodes_color_map.append('black')
+        nodes_size_map.append(10)
 
+options = {
+    'node_color': nodes_color_map,
+    'node_size': nodes_size_map,
+    'width': 3,
+    'font_size': 8
+}
 
+nx.draw(G_di, pos, edges=edges_di, with_labels=False, edge_color=i_array,
+        edge_cmap=plt.cm.Reds, **options)
+labels = nx.get_edge_attributes(G_di, 'i')
+round_labels(labels)
+nx.draw_networkx_edge_labels(G_di, pos, edge_labels=labels, font_size=5)
+fig.suptitle('3-regular graph, SEM = 30V, R = 1 Ohm')
+plt.show()
+fig.savefig('./graphs_png/3_regular_graph.png', dpi=300)
 
+# Graph with bridge
 
+graph_name = 'graph_with_bridge.csv'
+sem_a = 5
+sem_b = 37
 
-##################################################################################
+G = import_data_from_csv('./graphs_csv/' + graph_name)
+add_sem(G, sem_a, sem_b, 30)
+i_array = compute_i(G)
 
-# BIG GRAPHS TEST
+print('Verifying ' + graph_name)
+print('I Kirchhoff\'s law', verify_first_kirchhoff_law(G, i_array))
+print('II Kirchhoff\'s law', verify_second_kirchhoff_law(G, i_array))
 
-##################################################################################
+G_di = nx.DiGraph()
 
-# big_graph_names = ('BIG_1000_random_graph.csv',
-#                    'BIG_2000_random_graph.csv',
-#                    'BIG_4000_3_regular_graph.csv',
-#                    'BIG_2000_graph_with_bridge.csv',
-#                    'BIG_3600_2D_grid_var_r.csv')
-#
-# for graph_name in big_graph_names:
-#     G = import_data_from_csv('./graphs_csv/' + graph_name)
-#     print('\nimported: ' + graph_name)
-#     if graph_name == 'BIG_1000_random_graph.csv':
-#         add_sem(G, 250, 500, 30)
-#     else:
-#         add_sem(G, 500, 1500, 30)
-#     i_array = compute_i(G)
-#     print('Verifying ' + graph_name)
-#     print('I Kirchhoff\'s law', verify_first_kirchhoff_law(G, i_array))
-#     print('II Kirchhoff\'s law', verify_second_kirchhoff_law(G, i_array))
-#
+for edge in G.edges():
+    id = G.get_edge_data(*edge).get('id')
+    node_a, node_b = edge[0], edge[1]
+    i = i_array[id]
+    if i < 0:
+        G_di.add_edge(min(node_a, node_b), max(node_a, node_b), i=-i)
+    else:
+        G_di.add_edge(max(node_a, node_b), min(node_a, node_b), i=i)
+
+edges_di = G_di.edges()
+i_array = [G_di[u][v]['i'] for u, v in edges_di]
+
+fig = plt.gcf()
+fig.set_size_inches(10, 10)
+pos = nx.spring_layout(G_di, k=0.25, iterations=30)
+
+nodes_color_map = []
+nodes_size_map = []
+
+for node in G_di.nodes():
+    if node == sem_a or node == sem_b:
+        nodes_color_map.append('red')
+        nodes_size_map.append(40)
+    else:
+        nodes_color_map.append('black')
+        nodes_size_map.append(10)
+
+edge_width_map = []
+
+for i, edge in enumerate(edges_di):
+    edge_width_map.append(G.get_edge_data(*edge).get('r') / 5 + 2)
+
+options = {
+    'node_color': nodes_color_map,
+    'node_size': nodes_size_map,
+    'width': edge_width_map,
+    'font_size': 8
+}
+
+nx.draw(G_di, pos, edges=edges_di, with_labels=False, edge_color=i_array,
+        edge_cmap=plt.cm.Reds, **options)
+labels = nx.get_edge_attributes(G_di, 'i')
+round_labels(labels)
+nx.draw_networkx_edge_labels(G_di, pos, edge_labels=labels, font_size=5)
+fig.suptitle('Graph with bridge, SEM = 30V, R in [0,10] Ohm')
+plt.show()
+fig.savefig('./graphs_png/graph_with_bridge.png', dpi=300)
+
+# 2D grid r = 1 Ohm
+
+graph_name = '2D_grid_const_r.csv'
+sem_a = 99
+sem_b = 45
+
+G = import_data_from_csv('./graphs_csv/' + graph_name)
+add_sem(G, sem_a, sem_b, 30)
+i_array = compute_i(G)
+
+print('Verifying ' + graph_name)
+print('I Kirchhoff\'s law', verify_first_kirchhoff_law(G, i_array))
+print('II Kirchhoff\'s law', verify_second_kirchhoff_law(G, i_array))
+
+G_di = nx.DiGraph()
+
+for edge in G.edges():
+    id = G.get_edge_data(*edge).get('id')
+    node_a, node_b = edge[0], edge[1]
+    i = i_array[id]
+    if i < 0:
+        G_di.add_edge(min(node_a, node_b), max(node_a, node_b), i=-i)
+    else:
+        G_di.add_edge(max(node_a, node_b), min(node_a, node_b), i=i)
+
+edges_di = G_di.edges()
+i_array = [G_di[u][v]['i'] for u, v in edges_di]
+
+fig = plt.gcf()
+fig.set_size_inches(10, 10)
+
+pos = {}
+for node in G_di.nodes():
+    pos.update([(node, (node / 10, node % 10))])
+
+nodes_color_map = []
+nodes_size_map = []
+
+for node in G_di.nodes():
+    if node == node_a or node == node_b:
+        nodes_color_map.append('red')
+        nodes_size_map.append(40)
+    else:
+        nodes_color_map.append('black')
+        nodes_size_map.append(10)
+
+options = {
+    'node_color': nodes_color_map,
+    'node_size': nodes_size_map,
+    'width': 3,
+    'font_size': 8
+}
+
+nx.draw(G_di, pos, edges=edges_di, with_labels=False, edge_color=i_array,
+        edge_cmap=plt.cm.Reds, **options)
+labels = nx.get_edge_attributes(G_di, 'i')
+round_labels(labels)
+nx.draw_networkx_edge_labels(G_di, pos, edge_labels=labels, font_size=5)
+fig.suptitle('2D grid, SEM = 30V, R = 1 Ohm')
+plt.show()
+fig.savefig('./graphs_png/2D_grid_const_r.png', dpi=300)
+
+# 2D grid r in [0,10] Ohm
+
+graph_name = '2D_grid_var_r.csv'
+sem_a = 99
+sem_b = 0
+
+G = import_data_from_csv('./graphs_csv/' + graph_name)
+add_sem(G, sem_a, sem_b, 30)
+i_array = compute_i(G)
+
+print('Verifying ' + graph_name)
+print('I Kirchhoff\'s law', verify_first_kirchhoff_law(G, i_array))
+print('II Kirchhoff\'s law', verify_second_kirchhoff_law(G, i_array))
+
+G_di = nx.DiGraph()
+
+for edge in G.edges():
+    id = G.get_edge_data(*edge).get('id')
+    node_a, node_b = edge[0], edge[1]
+    i = i_array[id]
+    if i < 0:
+        G_di.add_edge(min(node_a, node_b), max(node_a, node_b), i=-i)
+    else:
+        G_di.add_edge(max(node_a, node_b), min(node_a, node_b), i=i)
+
+edges_di = G_di.edges()
+i_array = [G_di[u][v]['i'] for u, v in edges_di]
+
+fig = plt.gcf()
+fig.set_size_inches(10, 10)
+
+pos = {}
+for node in G_di.nodes():
+    pos.update([(node, (node / 10, node % 10))])
+
+nodes_color_map = []
+nodes_size_map = []
+
+for node in G_di.nodes():
+    if node == node_a or node == node_b:
+        nodes_color_map.append('red')
+        nodes_size_map.append(40)
+    else:
+        nodes_color_map.append('black')
+        nodes_size_map.append(10)
+
+edge_width_map = []
+
+for i, edge in enumerate(edges_di):
+    edge_width_map.append(G.get_edge_data(*edge).get('r') / 2 + 2)
+
+options = {
+    'node_color': nodes_color_map,
+    'node_size': nodes_size_map,
+    'width': edge_width_map,
+    'font_size': 8
+}
+
+nx.draw(G_di, pos, edges=edges_di, with_labels=False, edge_color=i_array,
+        edge_cmap=plt.cm.Reds, **options)
+labels = nx.get_edge_attributes(G_di, 'i')
+round_labels(labels)
+nx.draw_networkx_edge_labels(G_di, pos, edge_labels=labels, font_size=5)
+fig.suptitle('2D grid, SEM = 30V, R in [0,10] Ohm')
+plt.show()
+fig.savefig('./graphs_png/2D_grid_var_r.png', dpi=300)
+
+# run_big_tests()
