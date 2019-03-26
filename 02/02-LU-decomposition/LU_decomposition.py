@@ -51,10 +51,6 @@ def lu_decomposition_with_pivoting(b):
                 max_row = j
                 pivot = abs(U[j][i] / s[permutation_vector[j]])
 
-        for j in range(i + 1, n):
-            if abs(U[j][i]) == pivot:
-                max_row = j
-                break
 
         U[[i, max_row], :] = U[[max_row, i], :]
         P[[i, max_row], :] = P[[max_row, i], :]
