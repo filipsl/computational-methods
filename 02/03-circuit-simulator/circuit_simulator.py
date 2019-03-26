@@ -13,9 +13,9 @@ def import_data_from_csv(file):
     with open(file, 'r') as csv_file:
         reader = csv.reader(csv_file)
         j = 0
-        for i, row in enumerate(reader):
+        for row in reader:
             if not G.has_edge(int(row[0]), int(row[1])):
-                G.add_edge(int(row[0]), int(row[1]), r=abs(float(row[2])), sem=0, id=j + 1, i=0)
+                G.add_edge(int(row[0]), int(row[1]), r=abs(float(row[2])), sem=0, id=j + 1)
                 j += 1
     return G
 
@@ -52,7 +52,7 @@ def second_kirchhoff_law(G):
             node_b = cycle[(i + 1) % len(cycle)]
             edge_data = G.get_edge_data(node_a, node_b)
             row[edge_data.get('id')] = edge_data.get('r') if node_a > node_b else -edge_data.get('r')
-            sem[-1] += edge_data['sem'] if node_a > node_b else -edge_data['sem']
+            sem[-1] += edge_data.get('sem') if node_a > node_b else -edge_data.get('sem')
         a.append(row)
     return a, sem
 
@@ -75,14 +75,53 @@ def round_labels(labels):
         v = LessPrecise(round(v, 2))
         labels[label] = v
 
+# TO DO : add first and second Kirchhoff's law verification
+
+def verify_first_kirchhoff_law(G, i_array):
+    eps = 1e-10
+    for node in G.nodes:
+        sum_of_current = 0
+        for edge in G.edges(node):
+            edge_id = G.get_edge_data(*edge).get('id')
+            sum_of_current += i_array[edge_id] if edge[0] > edge[1] else -i_array[edge_id]
+        if sum_of_current > eps:
+            return False
+    return True
+
+
+def verify_second_kirchhoff_law(G, i_array):
+    eps = 1e-10
+    for cycle in nx.cycle_basis(G):
+        sem_sum = 0
+        voltage_sum = 0
+        for i in range(len(cycle)):
+            node_a = cycle[i]
+            node_b = cycle[(i + 1) % len(cycle)]
+            edge_data = G.get_edge_data(node_a, node_b)
+            r = edge_data.get('r') if node_a > node_b else -edge_data.get('r')
+            voltage_sum += r*i_array[edge_data.get('id')]
+            sem_sum += edge_data.get('sem') if node_a > node_b else -edge_data.get('sem')
+        if abs(sem_sum - voltage_sum) > eps:
+            return False
+    return True
 
 
 
 
+##################################################################################
 
-G = import_data_from_csv("graph1.csv")
-add_sem(G, 45, 99, 30)
+# DATA PROCESSING
+
+##################################################################################
+
+
+G = import_data_from_csv("./graphs_csv/graph1.csv")
+add_sem(G, 99, 45, 30)
 i_array = compute_i(G)
+
+# print(verify_first_kirchhoff_law(G, i_array))
+# print(verify_second_kirchhoff_law(G, i_array))
+
 
 G_di = nx.DiGraph()
 
@@ -126,12 +165,12 @@ for node in G_di.nodes():
 options = {
     'node_color': nodes_color_map,
     'node_size': nodes_size_map,
-    'width': 4,
+    'width': 3,
     'font_size': 8
 }
 
 nx.draw(G_di, pos, edges=edges_di, with_labels=False, edge_color=i_array,
-        edge_cmap=plt.cm.OrRd, **options)
+        edge_cmap=plt.cm.Reds, **options)
 labels = nx.get_edge_attributes(G_di, 'i')
 round_labels(labels)
 nx.draw_networkx_edge_labels(G_di, pos, edge_labels=labels, font_size=5)
