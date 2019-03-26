@@ -5,7 +5,7 @@
 import networkx as nx
 import csv
 import numpy as np
-import matplotlib.pyplot as plt
+
 
 # Random graph n=30 r = 1
 G = nx.erdos_renyi_graph(30, 0.2)
