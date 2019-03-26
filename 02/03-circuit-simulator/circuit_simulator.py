@@ -14,10 +14,9 @@ def import_data_from_csv(file):
         reader = csv.reader(csv_file)
         j = 0
         for i, row in enumerate(reader):
-            if j < 50:
-                if not G.has_edge(int(row[0]), int(row[1])):
-                    G.add_edge(int(row[0]), int(row[1]), r=abs(float(row[2])), sem=0, id=j + 1, i=0)
-                    j += 1
+            if not G.has_edge(int(row[0]), int(row[1])):
+                G.add_edge(int(row[0]), int(row[1]), r=abs(float(row[2])), sem=0, id=j + 1, i=0)
+                j += 1
     return G
 
 
@@ -77,39 +76,65 @@ def round_labels(labels):
         labels[label] = v
 
 
-G = import_data_from_csv("soc-sign-bitcoinalpha.csv")
-add_sem(G, 1901, 161, 3)
-i_matrix = compute_i(G)
+
+
+
+
+G = import_data_from_csv("graph1.csv")
+add_sem(G, 45, 99, 30)
+i_array = compute_i(G)
 
 G_di = nx.DiGraph()
 
 for edge in G.edges():
     id = G.get_edge_data(*edge).get('id')
     node_a, node_b = edge[0], edge[1]
-    i = i_matrix[id]
+    i = i_array[id]
     if i < 0:
         G_di.add_edge(min(node_a, node_b), max(node_a, node_b), i=-i)
     else:
         G_di.add_edge(max(node_a, node_b), min(node_a, node_b), i=i)
 
 edges_di = G_di.edges()
-i_matrix = [G_di[u][v]['i'] for u, v in edges_di]
+i_array = [G_di[u][v]['i'] for u, v in edges_di]
 
 fig = plt.gcf()
-fig.set_size_inches(4, 4)
+fig.set_size_inches(10, 10)
+fig.set_facecolor("red")
+
+
+
+# pos = nx.spectral_layout(G_di)
+# print(pos)
+pos = {}
+
+for node in G_di.nodes():
+    pos.update([(node, (node / 10, node % 10))])
+
+nodes_color_map = []
+nodes_size_map = []
+
+for node in G_di.nodes():
+    if node == 45 or node == 99:
+        nodes_color_map.append('red')
+        nodes_size_map.append(40)
+    else:
+        nodes_color_map.append('black')
+        nodes_size_map.append(10)
+
 
 options = {
-    'node_color': 'yellow',
-    'node_size': 50,
-    'width': 1,
+    'node_color': nodes_color_map,
+    'node_size': nodes_size_map,
+    'width': 4,
     'font_size': 8
 }
 
-pos = nx.spring_layout(G_di)
-nx.draw(G_di, pos, edges=edges_di, with_labels=True, edge_color=i_matrix,
+nx.draw(G_di, pos, edges=edges_di, with_labels=False, edge_color=i_array,
         edge_cmap=plt.cm.OrRd, **options)
 labels = nx.get_edge_attributes(G_di, 'i')
 round_labels(labels)
 nx.draw_networkx_edge_labels(G_di, pos, edge_labels=labels, font_size=5)
+fig.suptitle('2D grid, SEM = 30V, R = 1 Ohm')
 plt.show()
 fig.savefig('test2png.png', dpi=300)
