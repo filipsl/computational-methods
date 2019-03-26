@@ -60,19 +60,21 @@ writeFile.close()
 
 # ###################### BIG TESTS #######################
 
-# Random graph n=2000 r in (0,10)
-G = nx.erdos_renyi_graph(2000, 0.2)
+p = 0.0025
+
+# Random graph n=1000 r in (0,10)
+G = nx.erdos_renyi_graph(1000, p)
 edges = G.edges()
-with open('./graphs_csv/BIG_2000_random_graph.csv', 'w') as writeFile:
+with open('./graphs_csv/BIG_1000_random_graph.csv', 'w') as writeFile:
     writer = csv.writer(writeFile)
     for edge in edges:
         writer.writerow(edge + (np.random.rand() * 10,))
 writeFile.close()
 
-# Random graph n=4000 r in (0,10)
-G = nx.erdos_renyi_graph(4000, 0.2)
+# Random graph n=2000 r in (0,10)
+G = nx.erdos_renyi_graph(2000, p)
 edges = G.edges()
-with open('./graphs_csv/BIG_4000_random_graph.csv', 'w') as writeFile:
+with open('./graphs_csv/BIG_2000_random_graph.csv', 'w') as writeFile:
     writer = csv.writer(writeFile)
     for edge in edges:
         writer.writerow(edge + (np.random.rand() * 10,))
@@ -87,18 +89,18 @@ with open('./graphs_csv/BIG_4000_3_regular_graph.csv', 'w') as writeFile:
         writer.writerow(edge + (np.random.rand() * 10,))
 writeFile.close()
 
-# Graph with bridge n=4000 r in (0,10)
-G = nx.erdos_renyi_graph(2000, 0.2)
+# Graph with bridge n=2000 r in (0,10)
+G = nx.erdos_renyi_graph(1000, p)
 edges = G.edges()
-with open('./graphs_csv/BIG_4000_graph_with_bridge.csv', 'w') as writeFile:
+with open('./graphs_csv/BIG_2000_graph_with_bridge.csv', 'w') as writeFile:
     writer = csv.writer(writeFile)
     for edge in edges:
         writer.writerow(edge + (np.random.rand() * 10,))
-    G = nx.erdos_renyi_graph(2000, 0.2)
+    G = nx.erdos_renyi_graph(1000, p)
     edges = G.edges()
     for edge in edges:
-        writer.writerow((edge[0] + 2000,) + (edge[1] + 2000,) + (np.random.rand() * 10,))
-    writer.writerow((1000, 3000, np.random.rand() * 10))  # add bridge
+        writer.writerow((edge[0] + 1000,) + (edge[1] + 1000,) + (np.random.rand() * 10,))
+    writer.writerow((500, 1500, np.random.rand() * 10))  # add bridge
 writeFile.close()
 
 # 2D GRID r in (0,10)
