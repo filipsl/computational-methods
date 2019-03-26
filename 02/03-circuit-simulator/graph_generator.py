@@ -60,7 +60,7 @@ writeFile.close()
 
 # ###################### BIG TESTS #######################
 
-p = 0.0025
+p = 0.003
 
 # Random graph n=1000 r in (0,10)
 G = nx.erdos_renyi_graph(1000, p)

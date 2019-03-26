@@ -1,0 +1,30 @@
+imported: BIG_1000_random_graph.csv
+np.linalg.lstsq begins...
+Verifying BIG_1000_random_graph.csv
+I Kirchhoff's law True
+II Kirchhoff's law True
+
+imported: BIG_2000_random_graph.csv
+np.linalg.lstsq begins...
+Verifying BIG_2000_random_graph.csv
+I Kirchhoff's law True
+II Kirchhoff's law True
+
+imported: BIG_4000_3_regular_graph.csv
+np.linalg.lstsq begins...
+Verifying BIG_4000_3_regular_graph.csv
+I Kirchhoff's law True
+II Kirchhoff's law True
+
+imported: BIG_2000_graph_with_bridge.csv
+np.linalg.lstsq begins...
+Verifying BIG_2000_graph_with_bridge.csv
+I Kirchhoff's law True
+II Kirchhoff's law True
+
+imported: BIG_3600_2D_grid_var_r.csv
+np.linalg.lstsq begins...
+Verifying BIG_3600_2D_grid_var_r.csv
+I Kirchhoff's law True
+II Kirchhoff's law True
+

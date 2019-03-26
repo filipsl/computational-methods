@@ -2,21 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e16a4d0d-67d4-416c-826e-3cc0b675eeea" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/graphs_csv/BIG_1000_random_graph.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graphs_csv/BIG_2000_graph_with_bridge.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/big_tests.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/graphs_png/random_graph.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/circuit_simulator.py" beforeDir="false" afterPath="$PROJECT_DIR$/circuit_simulator.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/graph_generator.py" beforeDir="false" afterPath="$PROJECT_DIR$/graph_generator.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/graphs_csv/2D_grid_const_r.csv" beforeDir="false" afterPath="$PROJECT_DIR$/graphs_csv/2D_grid_const_r.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/graphs_csv/2D_grid_var_r.csv" beforeDir="false" afterPath="$PROJECT_DIR$/graphs_csv/2D_grid_var_r.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/graphs_csv/3_regular_graph.csv" beforeDir="false" afterPath="$PROJECT_DIR$/graphs_csv/3_regular_graph.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graphs_csv/BIG_1000_random_graph.csv" beforeDir="false" afterPath="$PROJECT_DIR$/graphs_csv/BIG_1000_random_graph.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graphs_csv/BIG_2000_graph_with_bridge.csv" beforeDir="false" afterPath="$PROJECT_DIR$/graphs_csv/BIG_2000_graph_with_bridge.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/graphs_csv/BIG_2000_random_graph.csv" beforeDir="false" afterPath="$PROJECT_DIR$/graphs_csv/BIG_2000_random_graph.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/graphs_csv/BIG_3600_2D_grid_var_r.csv" beforeDir="false" afterPath="$PROJECT_DIR$/graphs_csv/BIG_3600_2D_grid_var_r.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/graphs_csv/BIG_4000_3_regular_graph.csv" beforeDir="false" afterPath="$PROJECT_DIR$/graphs_csv/BIG_4000_3_regular_graph.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/graphs_csv/BIG_4000_graph_with_bridge.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/graphs_csv/BIG_4000_random_graph.csv" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/graphs_csv/graph_with_bridge.csv" beforeDir="false" afterPath="$PROJECT_DIR$/graphs_csv/graph_with_bridge.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/graphs_csv/random_graph.csv" beforeDir="false" afterPath="$PROJECT_DIR$/graphs_csv/random_graph.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/small.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/soc-sign-bitcoinalpha.csv" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -25,8 +27,8 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/03_circuit_simulator$graph_generator.coverage" NAME="graph_generator Coverage Results" MODIFIED="1553610223151" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/03_circuit_simulator$circuit_simulator.coverage" NAME="circuit_simulator Coverage Results" MODIFIED="1553609947591" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/03_circuit_simulator$graph_generator.coverage" NAME="graph_generator Coverage Results" MODIFIED="1553610418468" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/03_circuit_simulator$circuit_simulator.coverage" NAME="circuit_simulator Coverage Results" MODIFIED="1553611629725" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -55,54 +57,51 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="csv" value="29" />
+          <entry key="csv" value="51" />
           <entry key="py" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="PLAIN_TEXT" value="29" />
+          <entry key="PLAIN_TEXT" value="51" />
           <entry key="Python" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="5168" />
-          <entry key="txt" value="76" />
+          <entry key="py" value="5395" />
+          <entry key="txt" value="95" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="76" />
-          <entry key="Python" value="5168" />
+          <entry key="PLAIN_TEXT" value="95" />
+          <entry key="Python" value="5395" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/circuit_simulator.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="57" lean-forward="true" selection-start-line="57" selection-end-line="57" />
+            <state relative-caret-position="270">
+              <caret line="136" column="9" lean-forward="true" selection-start-line="136" selection-start-column="9" selection-end-line="136" selection-end-column="9" />
               <folding>
                 <element signature="e#50#68#0" expanded="true" />
-                <marker date="1553609941504" expanded="true" signature="167:476" ph="..." />
-                <marker date="1553609941504" expanded="true" signature="1790:4318" ph="..." />
+                <marker date="1553611628799" expanded="true" signature="167:476" ph="..." />
+                <marker date="1553611628799" expanded="true" signature="1790:7506" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/graph_generator.py">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/graphs_csv/random_graph.csv">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="163">
-              <caret line="104" lean-forward="true" selection-start-line="104" selection-end-line="104" />
-              <folding>
-                <element signature="e#50#71#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="972">
+              <caret line="54" column="2" selection-start-line="54" selection-end-line="54" selection-end-column="2" />
             </state>
           </provider>
         </entry>
@@ -128,6 +127,7 @@
       <find>i_matrix</find>
       <find>OrR</find>
       <find>lam</find>
+      <find>10</find>
     </findStrings>
     <replaceStrings>
       <replace>i_array</replace>
@@ -139,8 +139,8 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/circuit_simulator.py" />
         <option value="$PROJECT_DIR$/graph_generator.py" />
+        <option value="$PROJECT_DIR$/circuit_simulator.py" />
       </list>
     </option>
   </component>
@@ -174,6 +174,11 @@
               <item name="03-circuit-simulator" type="462c0819:PsiDirectoryNode" />
               <item name="graphs_csv" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="03-circuit-simulator" type="b2602c69:ProjectViewProjectNode" />
+              <item name="03-circuit-simulator" type="462c0819:PsiDirectoryNode" />
+              <item name="graphs_png" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -204,7 +209,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.graph_generator">
+  <component name="RunManager" selected="Python.circuit_simulator">
     <configuration name="circuit_simulator" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="03-circuit-simulator" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -255,8 +260,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.graph_generator" />
         <item itemvalue="Python.circuit_simulator" />
+        <item itemvalue="Python.graph_generator" />
       </list>
     </recent_temporary>
   </component>
@@ -320,7 +325,14 @@
       <option name="project" value="LOCAL" />
       <updated>1553608531830</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Add generated tests">
+      <created>1553610315261</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1553610315261</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -338,7 +350,30 @@
       <window_info anchor="bottom" id="Docker" order="5" show_stripe_button="false" />
       <window_info anchor="bottom" id="Message" order="6" />
       <window_info anchor="bottom" id="Find" order="7" weight="0.32919255" />
-      <window_info anchor="bottom" id="Run" order="8" sideWeight="0.56573707" visible="true" weight="0.33074534" />
+      <window_info anchor="bottom" id="Run" order="8" sideWeight="0.56573707" visible="true" weight="0.1583851" />
+      <window_info anchor="bottom" id="Debug" order="9" sideWeight="0.49880478" weight="0.39906833" />
+      <window_info anchor="bottom" id="Cvs" order="10" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="11" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="12" />
+      <window_info anchor="right" id="Database" order="0" weight="0.32988048" />
+      <window_info anchor="right" id="Commander" order="1" weight="0.4" />
+      <window_info anchor="right" id="SciView" order="2" visible="true" weight="0.31075698" />
+      <window_info anchor="right" id="Ant Build" order="3" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="4" weight="0.25" />
+    </layout>
+    <layout-to-restore>
+      <window_info id="Favorites" order="0" side_tool="true" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.2" />
+      <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Database Changes" order="0" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="1" />
+      <window_info anchor="bottom" id="Event Log" order="2" sideWeight="0.43426296" side_tool="true" weight="0.3726708" />
+      <window_info anchor="bottom" id="Version Control" order="3" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Python Console" order="4" />
+      <window_info anchor="bottom" id="Docker" order="5" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Message" order="6" />
+      <window_info anchor="bottom" id="Find" order="7" weight="0.32919255" />
+      <window_info anchor="bottom" id="Run" order="8" sideWeight="0.56573707" visible="true" weight="0.39906833" />
       <window_info anchor="bottom" id="Debug" order="9" sideWeight="0.49880478" weight="0.39906833" />
       <window_info anchor="bottom" id="Cvs" order="10" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="11" weight="0.4" />
@@ -346,29 +381,6 @@
       <window_info anchor="right" id="Database" order="0" weight="0.32988048" />
       <window_info anchor="right" id="Commander" order="1" weight="0.4" />
       <window_info anchor="right" id="SciView" order="2" visible="true" weight="0.08605578" />
-      <window_info anchor="right" id="Ant Build" order="3" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="4" weight="0.25" />
-    </layout>
-    <layout-to-restore>
-      <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.13306773" />
-      <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Database Changes" order="0" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="1" />
-      <window_info anchor="bottom" id="Event Log" order="2" sideWeight="0.43426296" side_tool="true" visible="true" weight="0.3726708" />
-      <window_info anchor="bottom" id="Version Control" order="3" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Python Console" order="4" />
-      <window_info anchor="bottom" id="Docker" order="5" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Message" order="6" />
-      <window_info anchor="bottom" id="Find" order="7" />
-      <window_info active="true" anchor="bottom" id="Run" order="8" sideWeight="0.56573707" visible="true" weight="0.3726708" />
-      <window_info anchor="bottom" id="Debug" order="9" sideWeight="0.49880478" weight="0.39906833" />
-      <window_info anchor="bottom" id="Cvs" order="10" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="11" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="12" />
-      <window_info anchor="right" id="Database" order="0" weight="0.32988048" />
-      <window_info anchor="right" id="Commander" order="1" weight="0.4" />
-      <window_info anchor="right" id="SciView" order="2" visible="true" weight="0.39601594" />
       <window_info anchor="right" id="Ant Build" order="3" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="4" weight="0.25" />
     </layout-to-restore>
@@ -388,7 +400,8 @@
     <MESSAGE value="Add graph generator" />
     <MESSAGE value="Generate graphs" />
     <MESSAGE value="Generate all graphs" />
-    <option name="LAST_COMMIT_MESSAGE" value="Generate all graphs" />
+    <MESSAGE value="Add generated tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add generated tests" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$USER_HOME$/.PyCharm2018.2/system/python_stubs/1591091109/builtins.py">
@@ -425,9 +438,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/graphs_csv/random_graph.csv">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/graphs_csv/BIG_4000_random_graph.csv">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-7192155">
@@ -435,21 +445,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/circuit_simulator.py">
+    <entry file="file://$PROJECT_DIR$/graph_generator.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="57" lean-forward="true" selection-start-line="57" selection-end-line="57" />
+        <state relative-caret-position="199">
+          <caret line="110" column="22" lean-forward="true" selection-start-line="110" selection-start-column="22" selection-end-line="110" selection-end-column="22" />
           <folding>
-            <element signature="e#50#68#0" expanded="true" />
-            <marker date="1553609941504" expanded="true" signature="167:476" ph="..." />
-            <marker date="1553609941504" expanded="true" signature="1790:4318" ph="..." />
+            <element signature="e#50#71#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/graphs_csv/BIG_4000_3_regular_graph.csv">
+    <entry file="file://$PROJECT_DIR$/graphs_csv/BIG_1000_random_graph.csv">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-107704" />
+        <state relative-caret-position="-3880">
+          <caret line="1236" lean-forward="true" selection-start-line="1236" selection-end-line="1236" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/graphs_csv/BIG_2000_graph_with_bridge.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-8362">
+          <caret line="2523" lean-forward="true" selection-start-line="2523" selection-end-line="2523" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/graphs_csv/BIG_3600_2D_grid_var_r.csv">
@@ -461,32 +478,34 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/graphs_csv/BIG_2000_random_graph.csv">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-89236" />
+        <state relative-caret-position="-106732" />
       </provider>
       <provider editor-type-id="LargeFileEditor">
         <state relative-caret-position="-858406" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/graphs_csv/BIG_2000_graph_with_bridge.csv">
+    <entry file="file://$PROJECT_DIR$/graphs_csv/BIG_4000_3_regular_graph.csv">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="296">
-          <caret line="2523" lean-forward="true" selection-start-line="2523" selection-end-line="2523" />
+        <state relative-caret-position="130">
+          <caret line="5994" column="26" lean-forward="true" selection-start-line="5994" selection-start-column="26" selection-end-line="5994" selection-end-column="26" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/graphs_csv/BIG_1000_random_graph.csv">
+    <entry file="file://$PROJECT_DIR$/graphs_csv/random_graph.csv">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="1236" lean-forward="true" selection-start-line="1236" selection-end-line="1236" />
+        <state relative-caret-position="972">
+          <caret line="54" column="2" selection-start-line="54" selection-end-line="54" selection-end-column="2" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/graph_generator.py">
+    <entry file="file://$PROJECT_DIR$/circuit_simulator.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="163">
-          <caret line="104" lean-forward="true" selection-start-line="104" selection-end-line="104" />
+        <state relative-caret-position="270">
+          <caret line="136" column="9" lean-forward="true" selection-start-line="136" selection-start-column="9" selection-end-line="136" selection-end-column="9" />
           <folding>
-            <element signature="e#50#71#0" expanded="true" />
+            <element signature="e#50#68#0" expanded="true" />
+            <marker date="1553611628799" expanded="true" signature="167:476" ph="..." />
+            <marker date="1553611628799" expanded="true" signature="1790:7506" ph="..." />
           </folding>
         </state>
       </provider>
