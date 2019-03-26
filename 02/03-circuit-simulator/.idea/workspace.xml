@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e16a4d0d-67d4-416c-826e-3cc0b675eeea" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/graph_component_tester.py" afterDir="false" />
+    <list default="true" id="e16a4d0d-67d4-416c-826e-3cc0b675eeea" name="Default Changelist" comment="2D_grid graph SEM node improve">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/circuit_simulator.py" beforeDir="false" afterPath="$PROJECT_DIR$/circuit_simulator.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/graphs_csv/2D_grid_const_r.csv" beforeDir="false" afterPath="$PROJECT_DIR$/graphs_csv/2D_grid_const_r.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/graphs_csv/BIG_1000_random_graph.csv" beforeDir="false" afterPath="$PROJECT_DIR$/graphs_csv/BIG_1000_random_graph.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/graphs_csv/BIG_2000_graph_with_bridge.csv" beforeDir="false" afterPath="$PROJECT_DIR$/graphs_csv/BIG_2000_graph_with_bridge.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/graphs_png/graph_with_bridge.png" beforeDir="false" afterPath="$PROJECT_DIR$/graphs_png/graph_with_bridge.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/graphs_png/random_graph.png" beforeDir="false" afterPath="$PROJECT_DIR$/graphs_png/random_graph.png" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -18,7 +15,7 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/03_circuit_simulator$graph_generator.coverage" NAME="graph_generator Coverage Results" MODIFIED="1553610418468" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/03_circuit_simulator$graph_component_tester.coverage" NAME="graph_component_tester Coverage Results" MODIFIED="1553631265485" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/03_circuit_simulator$graph_component_tester.coverage" NAME="graph_component_tester Coverage Results" MODIFIED="1553632010793" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/03_circuit_simulator$circuit_simulator.coverage" NAME="circuit_simulator Coverage Results" MODIFIED="1553630005411" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="DatabaseView">
@@ -41,34 +38,38 @@
         <counts>
           <entry key="project.closed" value="6" />
           <entry key="project.open.time.1" value="2" />
-          <entry key="project.open.time.10" value="3" />
+          <entry key="project.open.time.10" value="4" />
           <entry key="project.open.time.9" value="2" />
-          <entry key="project.opened" value="7" />
+          <entry key="project.opened" value="8" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="csv" value="65" />
-          <entry key="py" value="7" />
+          <entry key="csv" value="67" />
+          <entry key="png" value="5" />
+          <entry key="py" value="9" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="PLAIN_TEXT" value="65" />
-          <entry key="Python" value="7" />
+          <entry key="Image" value="5" />
+          <entry key="PLAIN_TEXT" value="67" />
+          <entry key="Python" value="9" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
+          <entry key="cell" value="64" />
           <entry key="csv" value="132" />
-          <entry key="py" value="5950" />
+          <entry key="py" value="5951" />
           <entry key="txt" value="178" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="310" />
-          <entry key="Python" value="5950" />
+          <entry key="Python" value="5951" />
+          <entry key="Scratch" value="64" />
         </counts>
       </usages-collector>
     </session>
@@ -78,8 +79,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/graph_component_tester.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="484">
-              <caret line="54" column="19" lean-forward="true" selection-start-line="54" selection-start-column="19" selection-end-line="54" selection-end-column="19" />
+            <state relative-caret-position="234">
+              <caret line="46" column="49" selection-start-line="46" selection-start-column="49" selection-end-line="46" selection-end-column="49" />
             </state>
           </provider>
         </entry>
@@ -122,10 +123,10 @@
         <option value="$PROJECT_DIR$/graph_generator.py" />
         <option value="$PROJECT_DIR$/graphs_csv/graph_with_bridge.csv" />
         <option value="$PROJECT_DIR$/graphs_csv/2D_grid_const_r.csv" />
-        <option value="$PROJECT_DIR$/circuit_simulator.py" />
-        <option value="$PROJECT_DIR$/graphs_csv/BIG_2000_graph_with_bridge.csv" />
         <option value="$PROJECT_DIR$/graphs_csv/BIG_1000_random_graph.csv" />
         <option value="$PROJECT_DIR$/graph_component_tester.py" />
+        <option value="$PROJECT_DIR$/circuit_simulator.py" />
+        <option value="$PROJECT_DIR$/graphs_csv/BIG_2000_graph_with_bridge.csv" />
       </list>
     </option>
   </component>
@@ -195,29 +196,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.graph_component_tester">
-    <configuration name="circuit_simulator" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="03-circuit-simulator" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="$USER_HOME$/anaconda2/envs/py37/bin/python" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/circuit_simulator.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager">
     <configuration name="graph_component_tester" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="03-circuit-simulator" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -240,38 +219,9 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="graph_generator" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="03-circuit-simulator" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/graph_generator.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <list>
-      <item itemvalue="Python.circuit_simulator" />
-      <item itemvalue="Python.graph_generator" />
-      <item itemvalue="Python.graph_component_tester" />
-    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.graph_component_tester" />
-        <item itemvalue="Python.circuit_simulator" />
-        <item itemvalue="Python.graph_generator" />
       </list>
     </recent_temporary>
   </component>
@@ -377,14 +327,22 @@
       <option name="project" value="LOCAL" />
       <updated>1553615214916</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="2D_grid graph SEM node improve">
+      <created>1553631403200</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1553631403200</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="64" y="-11" width="1303" height="780" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.2063745" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.20956175" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Database Changes" order="0" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="1" />
@@ -394,13 +352,13 @@
       <window_info anchor="bottom" id="Docker" order="5" show_stripe_button="false" />
       <window_info anchor="bottom" id="Message" order="6" />
       <window_info anchor="bottom" id="Find" order="7" weight="0.32919255" />
-      <window_info anchor="bottom" id="Run" order="8" sideWeight="0.56573707" weight="0.32763976" />
+      <window_info active="true" anchor="bottom" id="Run" order="8" sideWeight="0.56573707" visible="true" weight="0.32763976" />
       <window_info anchor="bottom" id="Debug" order="9" sideWeight="0.49880478" weight="0.39906833" />
       <window_info anchor="bottom" id="Cvs" order="10" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="11" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="12" />
-      <window_info anchor="right" id="Database" order="0" weight="0.32988048" />
-      <window_info anchor="right" id="Commander" order="1" weight="0.4" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Database" order="1" weight="0.32988048" />
       <window_info anchor="right" id="SciView" order="2" weight="0.14501992" />
       <window_info anchor="right" id="Ant Build" order="3" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="4" weight="0.25" />
@@ -498,20 +456,6 @@
         <state relative-caret-position="-943" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/graphs_csv/graph_with_bridge.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="269">
-          <caret line="73" column="25" selection-start-line="73" selection-start-column="25" selection-end-line="73" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/graph_generator.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1102">
-          <caret line="39" column="17" selection-start-line="39" selection-start-column="17" selection-end-line="39" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/graphs_csv/2D_grid_var_r.csv">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -519,41 +463,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="527">
           <caret line="180" lean-forward="true" selection-start-line="180" selection-end-line="180" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/circuit_simulator.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="136" lean-forward="true" selection-start-line="136" selection-end-line="136" />
-          <folding>
-            <element signature="e#50#68#0" expanded="true" />
-            <marker date="1553615200439" expanded="true" signature="167:476" ph="..." />
-            <marker date="1553615200439" expanded="true" signature="1790:12673" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/graphs_csv/BIG_2000_graph_with_bridge.csv">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="34200">
-          <caret line="1900" column="18" lean-forward="true" selection-start-line="1900" selection-start-column="18" selection-end-line="1900" selection-end-column="18" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="csv-data-editor">
-        <state>
-          <format>
-            <csv-format name="Comma-separated (CSV)" id="Comma-separated (CSV)_id">
-              <data>
-                <record-format prefix="" suffix="" nullText="" quotationPolicy="as needed" valueSeparator="," recordSeparator="&#10;">
-                  <quotation>
-                    <quotes left="&quot;" right="&quot;" leftEscaped="&quot;&quot;" rightEscaped="&quot;&quot;" />
-                    <quotes left="'" right="'" leftEscaped="''" rightEscaped="''" />
-                  </quotation>
-                </record-format>
-              </data>
-            </csv-format>
-          </format>
         </state>
       </provider>
     </entry>
@@ -580,10 +489,74 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/graphs_png/2D_grid_var_r.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/graphs_png/2D_grid_const_r.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/graphs_png/random_graph.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/graphs_png/graph_with_bridge.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/circuit_simulator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="268">
+          <caret line="117" column="54" lean-forward="true" selection-start-line="117" selection-start-column="54" selection-end-line="117" selection-end-column="54" />
+          <folding>
+            <element signature="e#50#68#0" expanded="true" />
+            <marker date="1553631476221" expanded="true" signature="167:497" ph="..." />
+            <marker date="1553631476221" expanded="true" signature="1811:12694" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/graphs_png/3_regular_graph.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/graph_generator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="15" column="36" lean-forward="true" selection-start-line="15" selection-start-column="36" selection-end-line="15" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/graphs_csv/graph_with_bridge.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="491">
+          <caret line="73" column="25" selection-start-line="73" selection-start-column="25" selection-end-line="73" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/graphs_csv/BIG_2000_graph_with_bridge.csv">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="8550">
+          <caret line="475" column="21" lean-forward="true" selection-start-line="475" selection-start-column="21" selection-end-line="475" selection-end-column="21" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="csv-data-editor">
+        <state>
+          <format>
+            <csv-format name="Comma-separated (CSV)" id="Comma-separated (CSV)_id">
+              <data>
+                <record-format prefix="" suffix="" nullText="" quotationPolicy="as needed" valueSeparator="," recordSeparator="&#10;">
+                  <quotation>
+                    <quotes left="&quot;" right="&quot;" leftEscaped="&quot;&quot;" rightEscaped="&quot;&quot;" />
+                    <quotes left="'" right="'" leftEscaped="''" rightEscaped="''" />
+                  </quotation>
+                </record-format>
+              </data>
+            </csv-format>
+          </format>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/graph_component_tester.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="484">
-          <caret line="54" column="19" lean-forward="true" selection-start-line="54" selection-start-column="19" selection-end-line="54" selection-end-column="19" />
+        <state relative-caret-position="234">
+          <caret line="46" column="49" selection-start-line="46" selection-start-column="49" selection-end-line="46" selection-end-column="49" />
         </state>
       </provider>
     </entry>

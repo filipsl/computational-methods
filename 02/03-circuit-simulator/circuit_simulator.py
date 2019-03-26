@@ -17,6 +17,7 @@ def import_data_from_csv(file):
             if not G.has_edge(int(row[0]), int(row[1])):
                 G.add_edge(int(row[0]), int(row[1]), r=abs(float(row[2])), sem=0, id=j + 1)
                 j += 1
+    csv_file.close()
     return G
 
 
